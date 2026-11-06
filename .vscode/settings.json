@@ -1,0 +1,9 @@
+{
+    "r.lsp.promptToInstall": false,
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/src"
+    ],
+    "[python]": {
+        "editor.formatOnSave": true
+    }
+}
