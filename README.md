@@ -45,11 +45,41 @@ src/
 
 Create a virtual environment and install the project in editable mode:
 
+MacOS
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -e .
 ```
+
+Window 
+```bash
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install -e .
+```
+
+
+
+## Generating Input Data
+
+Generate a reproducible random instance:
+MacOS
+```bash
+python -m min_cover_set.cli \
+  --generate-elements 100 \
+  --generate-subsets 20 \
+  --density 0.3 \
+  --seed 42 \
+  --output data.json
+```
+Window
+```bash
+python -m min_cover_set.cli --generate-elements 100 --generate-subsets 20 --density 0.3 --seed 42 --output data.json
+```
+
+Every generated element is assigned to at least one subset, so the generated
+instance is valid.
 
 ## Input Format
 
@@ -86,22 +116,6 @@ The result is printed as JSON:
   "selected": ["S4", "S2"]
 }
 ```
-
-## Generating Input Data
-
-Generate a reproducible random instance:
-
-```bash
-python -m min_cover_set.cli \
-  --generate-elements 100 \
-  --generate-subsets 20 \
-  --density 0.3 \
-  --seed 42 \
-  --output data.json
-```
-
-Every generated element is assigned to at least one subset, so the generated
-instance is valid.
 
 ## Evaluating Performance
 
