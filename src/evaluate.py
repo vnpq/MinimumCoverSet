@@ -44,9 +44,23 @@ def evaluate(instance: SetCoverInstance) -> dict[str, dict[str, float | int | bo
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("input", type=Path, help="JSON instance file")
+    parser.add_argument(
+        "input",
+        type=Path,
+        nargs="?",
+        default=None,
+        help="JSON instance file (default: examples/data.json or examples/basic.json)",
+    )
     args = parser.parse_args()
-    payload = json.loads(args.input.read_text(encoding="utf-8"))
+    input_file = args.input
+    if input_file is None:
+        if Path("examples/data.json").exists():
+            input_file = Path("examples/data.json")
+        elif Path("examples/basic.json").exists():
+            input_file = Path("examples/basic.json")
+        else:
+            parser.error("provide an input JSON file or generate examples/data.json first")
+    payload = json.loads(input_file.read_text(encoding="utf-8"))
     instance = SetCoverInstance.from_collections(
         payload["universe"], payload["subsets"]
     )
