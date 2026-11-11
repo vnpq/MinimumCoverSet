@@ -102,10 +102,10 @@ Input files use JSON with a universe and named subsets:
 Run the command-line interface with a selected algorithm:
 
 ```bash
-python -m min_cover_set.cli examples/basic.json --algorithm greedy
-python -m min_cover_set.cli examples/basic.json --algorithm brute_force
-python -m min_cover_set.cli examples/basic.json --algorithm dp
-python -m min_cover_set.cli examples/basic.json --algorithm branch_and_bound
+python -m min_cover_set.cli data.json --algorithm greedy
+python -m min_cover_set.cli data.json --algorithm brute_force
+python -m min_cover_set.cli data.json --algorithm dp
+python -m min_cover_set.cli data.json --algorithm branch_and_bound
 ```
 
 The result is printed as JSON:
@@ -120,10 +120,11 @@ The result is printed as JSON:
 ## Evaluating Performance
 
 Compare solution quality and runtime:
-
+Window
 ```bash
-python src/evaluate.py examples/basic.json
+python -m min_cover_set.evaluate data.json
 ```
+
 
 The evaluation reports:
 
