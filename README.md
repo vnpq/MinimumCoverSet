@@ -45,14 +45,14 @@ src/
 
 Create a virtual environment and install the project in editable mode:
 
-MacOS
+macOS
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -e .
 ```
 
-Window 
+Windows
 ```bash
 python -m venv .venv
 .venv\Scripts\Activate.ps1
@@ -64,7 +64,7 @@ python -m pip install -e .
 ## Generating Input Data
 
 Generate a reproducible random instance:
-MacOS
+macOS
 ```bash
 python -m min_cover_set.cli \
   --generate-elements 100 \
@@ -73,7 +73,7 @@ python -m min_cover_set.cli \
   --seed 42 \
   --output data.json
 ```
-Window
+Windows
 ```bash
 python -m min_cover_set.cli --generate-elements 100 --generate-subsets 20 --density 0.3 --seed 42 --output data.json
 ```
@@ -120,9 +120,9 @@ The result is printed as JSON:
 ## Evaluating Performance
 
 Compare solution quality and runtime:
-Window
+Windows
 ```bash
-python -m min_cover_set.evaluate data.json
+python src/evaluate.py data.json
 ```
 
 
