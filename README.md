@@ -45,41 +45,29 @@ src/
 
 Create a virtual environment and install the project in editable mode:
 
-macOS
+### macOS / Linux
+
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -e .
 ```
 
-Windows
-```bash
+### Windows (PowerShell)
+
+```powershell
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 python -m pip install -e .
 ```
 
+### Windows (Command Prompt - cmd)
 
-
-## Generating Input Data
-
-Generate a reproducible random instance:
-macOS
-```bash
-python -m min_cover_set.cli \
-  --generate-elements 100 \
-  --generate-subsets 20 \
-  --density 0.3 \
-  --seed 42 \
-  --output data.json
+```cmd
+python -m venv .venv
+.venv\Scripts\activate.bat
+python -m pip install -e .
 ```
-Windows
-```bash
-python -m min_cover_set.cli --generate-elements 100 --generate-subsets 20 --density 0.3 --seed 42 --output data.json
-```
-
-Every generated element is assigned to at least one subset, so the generated
-instance is valid.
 
 ## Input Format
 
@@ -97,34 +85,57 @@ Input files use JSON with a universe and named subsets:
 }
 ```
 
-## Running the Algorithms
+## Generating Input Data
 
-Run the command-line interface with a selected algorithm:
+Generate a reproducible random instance. By default, generated data is saved
+to `examples/data.json`:
+
+### macOS / Linux
 
 ```bash
-python -m min_cover_set.cli data.json --algorithm greedy
-python -m min_cover_set.cli data.json --algorithm brute_force
-python -m min_cover_set.cli data.json --algorithm dp
-python -m min_cover_set.cli data.json --algorithm branch_and_bound
+python -m min_cover_set.cli \
+  --generate-elements 100 \
+  --generate-subsets 20 \
+  --density 0.3 \
+  --seed 42
+```
+
+### Windows (PowerShell)
+
+```powershell
+python -m min_cover_set.cli --generate-elements 100 --generate-subsets 20 --density 0.3 --seed 42
+```
+
+Every generated element is assigned to at least one subset, so the generated
+instance is guaranteed to be valid.
+
+## Running the Algorithms
+
+Run any algorithm on a dataset:
+
+```bash
+python -m min_cover_set.cli examples/data.json --algorithm branch_and_bound
+python -m min_cover_set.cli examples/data.json --algorithm greedy
+python -m min_cover_set.cli examples/data.json --algorithm dp
+python -m min_cover_set.cli examples/basic.json --algorithm brute_force
 ```
 
 The result is printed as JSON:
 
 ```json
 {
-  "algorithm": "greedy",
-  "selected": ["S4", "S2"]
+  "algorithm": "branch_and_bound",
+  "selected": ["S2", "S4"]
 }
 ```
 
 ## Evaluating Performance
 
-Compare solution quality and runtime:
-Windows
-```bash
-python src/evaluate.py data.json
-```
+Compare solution quality and runtime across all algorithms:
 
+```bash
+python src/evaluate.py examples/data.json
+```
 
 The evaluation reports:
 

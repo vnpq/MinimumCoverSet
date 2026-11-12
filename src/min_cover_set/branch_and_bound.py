@@ -2,7 +2,6 @@
 
 from .model import SetCoverInstance, SubsetName
 
-
 def branch_and_bound_cover(
     instance: SetCoverInstance,
 ) -> tuple[SubsetName, ...]:

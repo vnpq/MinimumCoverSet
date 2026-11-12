@@ -21,7 +21,12 @@ def main() -> None:
     parser.add_argument("--generate-subsets", type=int, help="generate this many subsets")
     parser.add_argument("--density", type=float, default=0.3)
     parser.add_argument("--seed", type=int)
-    parser.add_argument("--output", type=Path, help="write generated data to JSON")
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=Path("examples/data.json"),
+        help="write generated data to JSON (default: examples/data.json)",
+    )
     args = parser.parse_args()
     if args.generate_elements is not None or args.generate_subsets is not None:
         if args.generate_elements is None or args.generate_subsets is None:
@@ -30,9 +35,13 @@ def main() -> None:
             args.generate_elements, args.generate_subsets, args.density, args.seed
         )
         payload = instance_to_dict(generated)
-        if args.output:
-            args.output.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
-            return
+        output_path = args.output
+        if len(output_path.parts) == 1:
+            output_path = Path("examples") / output_path
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+        print(f"Generated instance successfully saved to {output_path}")
+        return
     elif args.input is None:
         parser.error("provide an input JSON file or generation options")
     else:
