@@ -144,6 +144,17 @@ The evaluation reports:
 - `accuracy`: `optimal / selected`; an optimal solution has accuracy `1.0`
 - `time_ms`: execution time of the algorithm in milliseconds
 
+## Jupyter Notebook
+
+The interactive evaluation notebook introduces the project, generates a
+reproducible dataset, runs all algorithms, compares their results, and
+visualizes solution size and runtime:
+
+```bash
+python -m pip install -e ".[notebook]"
+jupyter notebook notebooks/minimum_cover_set_evaluation.ipynb
+```
+
 ### Runtime Evaluation
 
 The `time_ms` field can be used to compare the runtime of the algorithms on

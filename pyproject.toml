@@ -10,6 +10,12 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = []
 
+[project.optional-dependencies]
+notebook = [
+    "matplotlib>=3.7",
+    "pandas>=2.0",
+]
+
 [project.scripts]
 min-cover-set = "min_cover_set.cli:main"
 
