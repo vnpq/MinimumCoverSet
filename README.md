@@ -142,4 +142,28 @@ The evaluation reports:
 - `selected`: number of subsets selected by the algorithm
 - `optimal`: number of subsets in the brute-force reference solution
 - `accuracy`: `optimal / selected`; an optimal solution has accuracy `1.0`
-- `time_ms`: execution time in milliseconds
+- `time_ms`: execution time of the algorithm in milliseconds
+
+### Runtime Evaluation
+
+The `time_ms` field can be used to compare the runtime of the algorithms on
+the same input. A smaller value means the algorithm completed faster.
+
+Example:
+
+```json
+{
+  "brute_force": {
+    "selected": 6,
+    "optimal": 6,
+    "accuracy": 1.0,
+    "time_ms": 76.26
+  },
+  "branch_and_bound": {
+    "selected": 6,
+    "optimal": 6,
+    "accuracy": 1.0,
+    "time_ms": 2.23
+  }
+}
+```

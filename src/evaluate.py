@@ -16,7 +16,8 @@ def evaluate(instance: SetCoverInstance) -> dict[str, dict[str, float | int | bo
     """Compare algorithms against the brute-force optimal solution.
 
     Accuracy is the ratio ``optimal_size / solution_size``. It is 1.0 when
-    the algorithm finds a minimum-cardinality cover.
+    the algorithm finds a minimum-cardinality cover. ``time_ms`` measures the
+    runtime of each algorithm call in milliseconds.
     """
     cover = MinimumCoverSet(instance)
     optimal = cover.brute_force()
