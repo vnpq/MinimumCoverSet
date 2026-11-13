@@ -1,0 +1,95 @@
+{
+  "description": "Nine original unit-cost E/CLR/CYC cases. E has reported optimal values; CLR/CYC use explicitly dated published best-known upper bounds.",
+  "instances": [
+    {
+      "name": "E1",
+      "family": "E",
+      "path": "../data/benchmarks/scpe1.txt",
+      "reference": {
+        "kind": "optimal",
+        "value": 5,
+        "source": "Nan Li (2017), Algorithms for NP-hard Optimization Problems and Cluster Analysis, Table 1.4, p. 19 (PDF p. 31), Optimal column: https://cis.temple.edu/~latecki/Dissertations/DissertationNanLi.pdf"
+      }
+    },
+    {
+      "name": "E2",
+      "family": "E",
+      "path": "../data/benchmarks/scpe2.txt",
+      "reference": {
+        "kind": "optimal",
+        "value": 5,
+        "source": "Nan Li (2017), Algorithms for NP-hard Optimization Problems and Cluster Analysis, Table 1.4, p. 19 (PDF p. 31), Optimal column: https://cis.temple.edu/~latecki/Dissertations/DissertationNanLi.pdf"
+      }
+    },
+    {
+      "name": "E3",
+      "family": "E",
+      "path": "../data/benchmarks/scpe3.txt",
+      "reference": {
+        "kind": "optimal",
+        "value": 5,
+        "source": "Nan Li (2017), Algorithms for NP-hard Optimization Problems and Cluster Analysis, Table 1.4, p. 19 (PDF p. 31), Optimal column: https://cis.temple.edu/~latecki/Dissertations/DissertationNanLi.pdf"
+      }
+    },
+    {
+      "name": "E4",
+      "family": "E",
+      "path": "../data/benchmarks/scpe4.txt",
+      "reference": {
+        "kind": "optimal",
+        "value": 5,
+        "source": "Nan Li (2017), Algorithms for NP-hard Optimization Problems and Cluster Analysis, Table 1.4, p. 19 (PDF p. 31), Optimal column: https://cis.temple.edu/~latecki/Dissertations/DissertationNanLi.pdf"
+      }
+    },
+    {
+      "name": "E5",
+      "family": "E",
+      "path": "../data/benchmarks/scpe5.txt",
+      "reference": {
+        "kind": "optimal",
+        "value": 5,
+        "source": "Nan Li (2017), Algorithms for NP-hard Optimization Problems and Cluster Analysis, Table 1.4, p. 19 (PDF p. 31), Optimal column: https://cis.temple.edu/~latecki/Dissertations/DissertationNanLi.pdf"
+      }
+    },
+    {
+      "name": "CLR10",
+      "family": "CLR",
+      "path": "../data/benchmarks/scpclr10.txt",
+      "reference": {
+        "kind": "best_known",
+        "value": 25,
+        "source": "Zahra Naji-Azimi (2010), Algorithms for Combinatorial Optimization Problems, Table 1.5, p. 17 (PDF p. 30), published EM/GRASP/Meta-RaPS values; historical best-known upper bound, not a claim of current optimality: https://amsdottorato.unibo.it/id/eprint/2695/1/Naji_Azimi_Zahra_Tesi.pdf"
+      }
+    },
+    {
+      "name": "CLR11",
+      "family": "CLR",
+      "path": "../data/benchmarks/scpclr11.txt",
+      "reference": {
+        "kind": "best_known",
+        "value": 23,
+        "source": "Zahra Naji-Azimi (2010), Algorithms for Combinatorial Optimization Problems, Table 1.5, p. 17 (PDF p. 30), published EM/GRASP/Meta-RaPS values; historical best-known upper bound, not a claim of current optimality: https://amsdottorato.unibo.it/id/eprint/2695/1/Naji_Azimi_Zahra_Tesi.pdf"
+      }
+    },
+    {
+      "name": "CYC6",
+      "family": "CYC",
+      "path": "../data/benchmarks/scpcyc06.txt",
+      "reference": {
+        "kind": "best_known",
+        "value": 60,
+        "source": "Zahra Naji-Azimi (2010), Algorithms for Combinatorial Optimization Problems, Table 1.5, p. 17 (PDF p. 30), published EM/GRASP/Meta-RaPS values; historical best-known upper bound, not a claim of current optimality: https://amsdottorato.unibo.it/id/eprint/2695/1/Naji_Azimi_Zahra_Tesi.pdf"
+      }
+    },
+    {
+      "name": "CYC7",
+      "family": "CYC",
+      "path": "../data/benchmarks/scpcyc07.txt",
+      "reference": {
+        "kind": "best_known",
+        "value": 144,
+        "source": "Zahra Naji-Azimi (2010), Algorithms for Combinatorial Optimization Problems, Table 1.5, p. 17 (PDF p. 30), published EM/GRASP/Meta-RaPS values; historical best-known upper bound, not a claim of current optimality: https://amsdottorato.unibo.it/id/eprint/2695/1/Naji_Azimi_Zahra_Tesi.pdf"
+      }
+    }
+  ]
+}

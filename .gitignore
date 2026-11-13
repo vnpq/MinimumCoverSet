@@ -1,3 +1,4 @@
+# Python and local build files
 .venv/
 __pycache__/
 *.py[cod]
@@ -8,4 +9,29 @@ dist/
 build/
 *.egg-info/
 .DS_Store
+.ipynb_checkpoints/
 
+# Local experiment results
+/results/
+/reports/
+
+# Handoff packages and personal instructions
+/MinimumCoverSet*.zip
+/*.bundle
+/*.patch
+/HUONG_DAN*.md
+/huong_dan*.md
+/DELIVERY.json
+/DOWNLOAD_VERIFICATION.json
+/PACKAGING_TESTING.txt
+/docs/HUONG_DAN*.md
+/docs/TU_PUSH_GITHUB_MAC.md
+/docs/CONTRIBUTION.md
+
+# Local assistant configuration
+.codex/
+.claude/
+.cursor/
+AGENTS.md
+CLAUDE.md
+GEMINI.md

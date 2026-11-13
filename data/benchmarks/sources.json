@@ -1,0 +1,79 @@
+{
+  "retrieved_utc": "2026-11-11T21:58:46.400490+00:00",
+  "collection": "https://github.com/pinam45/USCP_instances",
+  "original_source": "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/scpinfo.html",
+  "files": [
+    {
+      "file": "scpe1.txt",
+      "url": "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/scpe1.txt",
+      "sha256": "c04388428fd4050661d9a14e2beb50bc3fc203856a0cab2a782c3ea751da6246",
+      "rows": 50,
+      "columns": 500,
+      "all_costs_one": true
+    },
+    {
+      "file": "scpe2.txt",
+      "url": "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/scpe2.txt",
+      "sha256": "4f8cc3b46794583980f3ba8a0d1ba4ec8a7ce8e0e08553caa4c49f7221d41c8c",
+      "rows": 50,
+      "columns": 500,
+      "all_costs_one": true
+    },
+    {
+      "file": "scpe3.txt",
+      "url": "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/scpe3.txt",
+      "sha256": "b314906d85d852a2dbff9b6b536b44720c22b7d0fc7039d37a722ed3f5ba700b",
+      "rows": 50,
+      "columns": 500,
+      "all_costs_one": true
+    },
+    {
+      "file": "scpe4.txt",
+      "url": "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/scpe4.txt",
+      "sha256": "dddeb72f933467237223f2fbd35abca659f1fe22bf4abfbd36d649ce16d4e236",
+      "rows": 50,
+      "columns": 500,
+      "all_costs_one": true
+    },
+    {
+      "file": "scpe5.txt",
+      "url": "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/scpe5.txt",
+      "sha256": "c45d19716391da9500acbc6f36ea76efbbc48407aee681723140538c95acdf38",
+      "rows": 50,
+      "columns": 500,
+      "all_costs_one": true
+    },
+    {
+      "file": "scpclr10.txt",
+      "url": "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/scpclr10.txt",
+      "sha256": "7ae9fa82a59ca6d411cf179ef3541183c4c18c03bac0a18fb81814536563a441",
+      "rows": 511,
+      "columns": 210,
+      "all_costs_one": true
+    },
+    {
+      "file": "scpclr11.txt",
+      "url": "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/scpclr11.txt",
+      "sha256": "4de5c8fa47124988b35839eeaee3b67a6f28b24159a3db854826e29298673847",
+      "rows": 1023,
+      "columns": 330,
+      "all_costs_one": true
+    },
+    {
+      "file": "scpcyc06.txt",
+      "url": "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/scpcyc06.txt",
+      "sha256": "d92472193b3eb69ce675941da0a4a6a4c5a7d31f6d2b4e1ff7815d4d298011d5",
+      "rows": 240,
+      "columns": 192,
+      "all_costs_one": true
+    },
+    {
+      "file": "scpcyc07.txt",
+      "url": "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/scpcyc07.txt",
+      "sha256": "0b358ecba9227bb2e942f9b4edf9a6c557483df6157b5aa2b73e4e4882f020e3",
+      "rows": 672,
+      "columns": 448,
+      "all_costs_one": true
+    }
+  ]
+}
