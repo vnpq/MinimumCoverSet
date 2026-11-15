@@ -19,7 +19,8 @@ and measuring solution quality and runtime.
 - **Greedy**: fast approximation algorithm.
 - **Brute force**: checks subset combinations and returns an optimal solution.
 - **Dynamic programming**: uses a bitmask-based state representation.
-- **Branch and bound**: exact search with pruning to reduce the search space.
+- **Branch and bound**: exact search with pruning to reduce the search space (branch-on-elements).
+- **Binary branch and bound**: 0-1 decision tree search per subset (branch-on-subsets with suffix-feasibility pruning).
 
 The exact algorithms guarantee a minimum-cardinality cover. Their runtime can
 grow quickly as the input size increases, so they are most suitable for small
@@ -37,6 +38,7 @@ src/
     brute_force.py           # brute-force algorithm
     dynamic_programming.py   # dynamic-programming algorithm
     branch_and_bound.py      # branch-and-bound algorithm
+    binary_branch_and_bound.py # binary 0-1 branch-and-bound algorithm
     min_cover_set.py         # MinimumCoverSet class facade
     cli.py                   # command-line interface
 ```

@@ -26,6 +26,7 @@ def evaluate(instance: SetCoverInstance) -> dict[str, dict[str, float | int | bo
         "greedy": cover.greedy,
         "dynamic_programming": cover.dynamic_programming,
         "branch_and_bound": cover.branch_and_bound,
+        "binary_branch_and_bound": cover.binary_branch_and_bound,
     }
     results: dict[str, dict[str, float | int | bool]] = {}
 

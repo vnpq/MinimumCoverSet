@@ -14,7 +14,7 @@ def main() -> None:
     parser.add_argument("input", type=Path, nargs="?", help="JSON instance file")
     parser.add_argument(
         "--algorithm",
-        choices=("greedy", "brute_force", "dp", "branch_and_bound"),
+        choices=("greedy", "brute_force", "dp", "branch_and_bound", "binary_branch_and_bound"),
         default="greedy",
     )
     parser.add_argument("--generate-elements", type=int, help="generate this many elements")
@@ -54,6 +54,7 @@ def main() -> None:
         "brute_force": "brute_force",
         "dp": "dynamic_programming",
         "branch_and_bound": "branch_and_bound",
+        "binary_branch_and_bound": "binary_branch_and_bound",
     }
     result = getattr(MinimumCoverSet(instance), methods[args.algorithm])()
     print(json.dumps({"algorithm": args.algorithm, "selected": list(result)}))
