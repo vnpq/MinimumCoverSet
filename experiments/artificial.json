@@ -1,0 +1,275 @@
+{
+  "description": "Team generator: 3 sizes x 3 densities x 3 data seeds; independent solver seeds.",
+  "instances": [
+    {
+      "name": "n20_m40_p0.05_g11",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 20,
+        "num_subsets": 40,
+        "density": 0.05,
+        "seed": 11
+      }
+    },
+    {
+      "name": "n20_m40_p0.05_g22",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 20,
+        "num_subsets": 40,
+        "density": 0.05,
+        "seed": 22
+      }
+    },
+    {
+      "name": "n20_m40_p0.05_g33",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 20,
+        "num_subsets": 40,
+        "density": 0.05,
+        "seed": 33
+      }
+    },
+    {
+      "name": "n20_m40_p0.15_g11",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 20,
+        "num_subsets": 40,
+        "density": 0.15,
+        "seed": 11
+      }
+    },
+    {
+      "name": "n20_m40_p0.15_g22",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 20,
+        "num_subsets": 40,
+        "density": 0.15,
+        "seed": 22
+      }
+    },
+    {
+      "name": "n20_m40_p0.15_g33",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 20,
+        "num_subsets": 40,
+        "density": 0.15,
+        "seed": 33
+      }
+    },
+    {
+      "name": "n20_m40_p0.5_g11",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 20,
+        "num_subsets": 40,
+        "density": 0.5,
+        "seed": 11
+      }
+    },
+    {
+      "name": "n20_m40_p0.5_g22",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 20,
+        "num_subsets": 40,
+        "density": 0.5,
+        "seed": 22
+      }
+    },
+    {
+      "name": "n20_m40_p0.5_g33",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 20,
+        "num_subsets": 40,
+        "density": 0.5,
+        "seed": 33
+      }
+    },
+    {
+      "name": "n100_m200_p0.05_g11",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 100,
+        "num_subsets": 200,
+        "density": 0.05,
+        "seed": 11
+      }
+    },
+    {
+      "name": "n100_m200_p0.05_g22",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 100,
+        "num_subsets": 200,
+        "density": 0.05,
+        "seed": 22
+      }
+    },
+    {
+      "name": "n100_m200_p0.05_g33",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 100,
+        "num_subsets": 200,
+        "density": 0.05,
+        "seed": 33
+      }
+    },
+    {
+      "name": "n100_m200_p0.15_g11",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 100,
+        "num_subsets": 200,
+        "density": 0.15,
+        "seed": 11
+      }
+    },
+    {
+      "name": "n100_m200_p0.15_g22",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 100,
+        "num_subsets": 200,
+        "density": 0.15,
+        "seed": 22
+      }
+    },
+    {
+      "name": "n100_m200_p0.15_g33",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 100,
+        "num_subsets": 200,
+        "density": 0.15,
+        "seed": 33
+      }
+    },
+    {
+      "name": "n100_m200_p0.5_g11",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 100,
+        "num_subsets": 200,
+        "density": 0.5,
+        "seed": 11
+      }
+    },
+    {
+      "name": "n100_m200_p0.5_g22",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 100,
+        "num_subsets": 200,
+        "density": 0.5,
+        "seed": 22
+      }
+    },
+    {
+      "name": "n100_m200_p0.5_g33",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 100,
+        "num_subsets": 200,
+        "density": 0.5,
+        "seed": 33
+      }
+    },
+    {
+      "name": "n300_m600_p0.05_g11",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 300,
+        "num_subsets": 600,
+        "density": 0.05,
+        "seed": 11
+      }
+    },
+    {
+      "name": "n300_m600_p0.05_g22",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 300,
+        "num_subsets": 600,
+        "density": 0.05,
+        "seed": 22
+      }
+    },
+    {
+      "name": "n300_m600_p0.05_g33",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 300,
+        "num_subsets": 600,
+        "density": 0.05,
+        "seed": 33
+      }
+    },
+    {
+      "name": "n300_m600_p0.15_g11",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 300,
+        "num_subsets": 600,
+        "density": 0.15,
+        "seed": 11
+      }
+    },
+    {
+      "name": "n300_m600_p0.15_g22",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 300,
+        "num_subsets": 600,
+        "density": 0.15,
+        "seed": 22
+      }
+    },
+    {
+      "name": "n300_m600_p0.15_g33",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 300,
+        "num_subsets": 600,
+        "density": 0.15,
+        "seed": 33
+      }
+    },
+    {
+      "name": "n300_m600_p0.5_g11",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 300,
+        "num_subsets": 600,
+        "density": 0.5,
+        "seed": 11
+      }
+    },
+    {
+      "name": "n300_m600_p0.5_g22",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 300,
+        "num_subsets": 600,
+        "density": 0.5,
+        "seed": 22
+      }
+    },
+    {
+      "name": "n300_m600_p0.5_g33",
+      "family": "synthetic",
+      "generate": {
+        "num_elements": 300,
+        "num_subsets": 600,
+        "density": 0.5,
+        "seed": 33
+      }
+    }
+  ]
+}
