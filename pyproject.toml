@@ -20,9 +20,6 @@ notebook = [
     "nbformat>=5.9",
 ]
 
-[project.scripts]
-min-cover-set = "min_cover_set.cli:main"
-
 [tool.setuptools.packages.find]
 where = ["src"]
 

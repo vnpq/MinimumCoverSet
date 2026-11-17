@@ -19,7 +19,6 @@ and measuring solution quality and runtime.
 - **Greedy**: fast approximation algorithm.
 - **Randomized greedy**: multiple randomized constructions with redundancy removal;
   keeps a pruned Greedy baseline, so its cover is never larger than Greedy's.
-- **Greedy + cleanup**: deterministic ablation (`greedy_pruned`) for comparison.
 - **Brute force**: checks subset combinations and returns an optimal solution.
 - **Dynamic programming**: uses a bitmask-based state representation.
 - **Branch and bound**: exact search with pruning to reduce the search space (branch-on-elements).
@@ -34,7 +33,6 @@ or medium-sized instances.
 ```text
 src/
   data_generator.py          # reproducible random input generation
-  evaluate.py                # solution accuracy and runtime evaluation
   min_cover_set/
     model.py                 # input model and validation
     greedy.py                # greedy approximation
@@ -47,11 +45,10 @@ src/
     branch_and_bound.py      # branch-and-bound algorithm
     binary_branch_and_bound.py # binary 0-1 branch-and-bound algorithm
     min_cover_set.py         # MinimumCoverSet class facade
-    cli.py                   # command-line interface
-tests/                       # correctness, exact-oracle, parser and CLI checks
+tests/                       # correctness, exact-oracle and benchmark checks
 experiments/                 # reproducible experiment manifests
 data/benchmarks/              # nine original unit-cost inputs and SHA-256 hashes
-notebooks/                   # interactive comparison of all six methods
+notebooks/                   # interactive comparison of six methods
 ```
 
 ## Installation
@@ -98,91 +95,14 @@ Input files use JSON with a universe and named subsets:
 }
 ```
 
-## Running the Algorithms
-
-Run the command-line interface with a selected algorithm:
-
-```bash
-python -m min_cover_set.cli examples/basic.json --algorithm greedy
-python -m min_cover_set.cli examples/basic.json --algorithm randomized_greedy --solver-seed 0 --restarts 30 --rcl-size 3
-python -m min_cover_set.cli examples/basic.json --algorithm brute_force
-python -m min_cover_set.cli examples/basic.json --algorithm dp
-python -m min_cover_set.cli examples/basic.json --algorithm branch_and_bound
-```
-
-The result is printed as JSON:
-
-```json
-{
-  "algorithm": "greedy",
-  "selected": ["S4", "S2"],
-  "cardinality": 2,
-  "valid": true,
-  "parameters": {}
-}
-```
-
 ## Generating Input Data
 
-Generate a reproducible random instance. By default, generated data is saved
-to `examples/data.json`:
-
-### macOS / Linux
-
-```bash
-python -m min_cover_set.cli \
-  --generate-elements 100 \
-  --generate-subsets 20 \
-  --density 0.3 \
-  --seed 42
-```
-
-### Windows (PowerShell)
-
-```powershell
-python -m min_cover_set.cli --generate-elements 100 --generate-subsets 20 --density 0.3 --seed 42
-```
-
-Every generated element is assigned to at least one subset, so the generated
-instance is valid. `--seed` controls data generation; `--solver-seed` separately
-controls randomized search. The generator assigns an owner before adding elements
-elsewhere with probability `density`, so expected actual density is
-`density + (1 - density) / num_subsets`.
-
-Generation saves the file and exits. A bare `--output sample.json` is saved as
-`examples/sample.json`; a path such as `--output data/sample.json` is used as
-provided. Run a solver in a separate command:
-
-```bash
-min-cover-set examples/data.json --algorithm randomized_greedy --solver-seed 0
-```
-
-## Evaluating Performance
-
-Compare solution quality and runtime across all six methods. Without an input,
-the evaluator uses `examples/data.json`, falling back to `examples/basic.json`:
-
-```bash
-python src/evaluate.py
-python src/evaluate.py examples/data.json
-python src/evaluate.py examples/basic.json --solver-seed 7 --restarts 30 --rcl-size 3
-```
-
-This convenience command always calls the exact solvers, without a size limit
-or timeout. Use the benchmark runner below for larger inputs.
-
-The evaluation reports:
-
-- `selected`: number of subsets selected by the algorithm
-- `optimal`: number of subsets in the brute-force reference solution
-- `accuracy`: `optimal / selected`; an optimal solution has accuracy `1.0`
-- `time_ms`: execution time in milliseconds
-- `optimality_gap_pct`: percentage excess over the exhaustive optimum
-- `valid`: independent coverage validation succeeded
+Run `notebooks/01_generate_data.ipynb` to create reproducible JSON instances
+under `data/`. Every generated element is assigned to at least one subset.
 
 For reproducible experiments with larger inputs, use the benchmark runner. Exact
-methods are opt-in and restricted to small inputs; the default is Greedy, pruned
-Greedy and randomized Greedy:
+methods are opt-in and restricted to small inputs; the default is Greedy and
+randomized Greedy:
 
 ```bash
 python -m unittest discover -s tests -v
@@ -199,30 +119,22 @@ Only unit-cost OR-Library row-format data are accepted; weighted inputs are reje
 
 ## Jupyter Notebook
 
-The interactive evaluation notebook introduces the project, generates a
-reproducible dataset, runs all algorithms, compares their results, and
-visualizes solution size and runtime. It includes Greedy, Greedy + cleanup,
-Randomized Greedy, Brute Force, Dynamic Programming and Branch and Bound:
+The notebooks follow the manifests in `experiments/`: the first materializes
+generated cases as JSON under `data/experiment_instances/`, and the second runs
+the benchmark runner for exact and scalable experiment groups. Results are
+written under `results/` and include runtime, cardinality, validation and
+reference-aware summaries:
 
 ```bash
 python -m pip install -e ".[notebook]"
-jupyter notebook notebooks/minimum_cover_set_evaluation.ipynb
+jupyter notebook notebooks/01_generate_data.ipynb
+jupyter notebook notebooks/02_evaluate_results.ipynb
 ```
 
 The optional extra installs Jupyter and its kernel as well as the plotting
 libraries. The core algorithms need only the Python standard library.
-The notebook works from the repository root or `notebooks/`. Its default
-20-element, 12-subset example is a demonstration with one timing per method,
-not a statistical benchmark. Re-execute it automatically with:
-
-```bash
-python scripts/check_notebook.py
-python scripts/check_notebook.py --empty --from-notebooks
-```
-
-For environments that do not permit kernel sockets, add `--in-process` to check
-cell execution and rich displays through IPython. This mode does not check the
-Jupyter transport/UI and has no per-cell timeout.
+The notebooks write generated data to `data/` and evaluation results to
+`results/` in the repository.
 
 ## Greedy and randomized greedy
 
@@ -231,7 +143,7 @@ universe elements. Equal gains use the largest `repr(subset_name)`; results
 contain subset names in selection order. The unweighted algorithm provides an
 `H_n` approximation bound, with `H_n <= 1 + ln(n)` for a nonempty universe.
 
-Randomized greedy first computes a feasible Greedy + cleanup baseline. Each
+Randomized greedy first computes a feasible cleaned Greedy baseline. Each
 restart chooses uniformly among the `rcl_size` subsets with the highest positive
 marginal coverage until all elements are covered. It then removes redundant
 subsets sequentially, updating coverage counts after every removal. Only a
@@ -241,11 +153,11 @@ strictly smaller complete cover replaces the incumbent.
 - A private random generator advances across restarts; the global RNG is unchanged.
 - `restarts=0` returns the baseline; `rcl_size=1` uses deterministic construction.
 - Cleanup produces an inclusion-minimal cover, which need not be optimal.
-- Cardinalities satisfy `OPT <= randomized_greedy <= greedy_pruned <= greedy`.
+- Cardinalities satisfy `OPT <= randomized_greedy <= greedy`.
 - Exact solvers are used as independent references on small instances.
 
-The test suite covers all 512 incidence matrices of size 3×3, 100 generated
-small instances, CLI/data parsing, seed reproducibility and benchmark output.
+The test suite covers all 512 incidence matrices of size 3×3, generated small
+instances, seed reproducibility and benchmark output.
 Benchmark summaries distinguish proven optima from historical best-known upper
 bounds; missing references remain unset. References and original input hashes
 are recorded in `experiments/benchmarks.json` and `data/benchmarks/sources.json`.

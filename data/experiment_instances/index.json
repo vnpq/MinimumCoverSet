@@ -1,0 +1,272 @@
+[
+  {
+    "experiment": "small_exact",
+    "name": "n6_m8_p0.1_g11",
+    "path": "data/experiment_instances/small_exact/n6_m8_p0.1_g11.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n6_m8_p0.1_g22",
+    "path": "data/experiment_instances/small_exact/n6_m8_p0.1_g22.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n6_m8_p0.1_g33",
+    "path": "data/experiment_instances/small_exact/n6_m8_p0.1_g33.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n6_m8_p0.3_g11",
+    "path": "data/experiment_instances/small_exact/n6_m8_p0.3_g11.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n6_m8_p0.3_g22",
+    "path": "data/experiment_instances/small_exact/n6_m8_p0.3_g22.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n6_m8_p0.3_g33",
+    "path": "data/experiment_instances/small_exact/n6_m8_p0.3_g33.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n6_m8_p0.7_g11",
+    "path": "data/experiment_instances/small_exact/n6_m8_p0.7_g11.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n6_m8_p0.7_g22",
+    "path": "data/experiment_instances/small_exact/n6_m8_p0.7_g22.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n6_m8_p0.7_g33",
+    "path": "data/experiment_instances/small_exact/n6_m8_p0.7_g33.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n10_m14_p0.1_g11",
+    "path": "data/experiment_instances/small_exact/n10_m14_p0.1_g11.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n10_m14_p0.1_g22",
+    "path": "data/experiment_instances/small_exact/n10_m14_p0.1_g22.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n10_m14_p0.1_g33",
+    "path": "data/experiment_instances/small_exact/n10_m14_p0.1_g33.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n10_m14_p0.3_g11",
+    "path": "data/experiment_instances/small_exact/n10_m14_p0.3_g11.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n10_m14_p0.3_g22",
+    "path": "data/experiment_instances/small_exact/n10_m14_p0.3_g22.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n10_m14_p0.3_g33",
+    "path": "data/experiment_instances/small_exact/n10_m14_p0.3_g33.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n10_m14_p0.7_g11",
+    "path": "data/experiment_instances/small_exact/n10_m14_p0.7_g11.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n10_m14_p0.7_g22",
+    "path": "data/experiment_instances/small_exact/n10_m14_p0.7_g22.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n10_m14_p0.7_g33",
+    "path": "data/experiment_instances/small_exact/n10_m14_p0.7_g33.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n14_m18_p0.1_g11",
+    "path": "data/experiment_instances/small_exact/n14_m18_p0.1_g11.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n14_m18_p0.1_g22",
+    "path": "data/experiment_instances/small_exact/n14_m18_p0.1_g22.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n14_m18_p0.1_g33",
+    "path": "data/experiment_instances/small_exact/n14_m18_p0.1_g33.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n14_m18_p0.3_g11",
+    "path": "data/experiment_instances/small_exact/n14_m18_p0.3_g11.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n14_m18_p0.3_g22",
+    "path": "data/experiment_instances/small_exact/n14_m18_p0.3_g22.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n14_m18_p0.3_g33",
+    "path": "data/experiment_instances/small_exact/n14_m18_p0.3_g33.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n14_m18_p0.7_g11",
+    "path": "data/experiment_instances/small_exact/n14_m18_p0.7_g11.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n14_m18_p0.7_g22",
+    "path": "data/experiment_instances/small_exact/n14_m18_p0.7_g22.json"
+  },
+  {
+    "experiment": "small_exact",
+    "name": "n14_m18_p0.7_g33",
+    "path": "data/experiment_instances/small_exact/n14_m18_p0.7_g33.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n20_m40_p0.05_g11",
+    "path": "data/experiment_instances/artificial/n20_m40_p0.05_g11.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n20_m40_p0.05_g22",
+    "path": "data/experiment_instances/artificial/n20_m40_p0.05_g22.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n20_m40_p0.05_g33",
+    "path": "data/experiment_instances/artificial/n20_m40_p0.05_g33.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n20_m40_p0.15_g11",
+    "path": "data/experiment_instances/artificial/n20_m40_p0.15_g11.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n20_m40_p0.15_g22",
+    "path": "data/experiment_instances/artificial/n20_m40_p0.15_g22.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n20_m40_p0.15_g33",
+    "path": "data/experiment_instances/artificial/n20_m40_p0.15_g33.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n20_m40_p0.5_g11",
+    "path": "data/experiment_instances/artificial/n20_m40_p0.5_g11.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n20_m40_p0.5_g22",
+    "path": "data/experiment_instances/artificial/n20_m40_p0.5_g22.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n20_m40_p0.5_g33",
+    "path": "data/experiment_instances/artificial/n20_m40_p0.5_g33.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n100_m200_p0.05_g11",
+    "path": "data/experiment_instances/artificial/n100_m200_p0.05_g11.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n100_m200_p0.05_g22",
+    "path": "data/experiment_instances/artificial/n100_m200_p0.05_g22.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n100_m200_p0.05_g33",
+    "path": "data/experiment_instances/artificial/n100_m200_p0.05_g33.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n100_m200_p0.15_g11",
+    "path": "data/experiment_instances/artificial/n100_m200_p0.15_g11.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n100_m200_p0.15_g22",
+    "path": "data/experiment_instances/artificial/n100_m200_p0.15_g22.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n100_m200_p0.15_g33",
+    "path": "data/experiment_instances/artificial/n100_m200_p0.15_g33.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n100_m200_p0.5_g11",
+    "path": "data/experiment_instances/artificial/n100_m200_p0.5_g11.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n100_m200_p0.5_g22",
+    "path": "data/experiment_instances/artificial/n100_m200_p0.5_g22.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n100_m200_p0.5_g33",
+    "path": "data/experiment_instances/artificial/n100_m200_p0.5_g33.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n300_m600_p0.05_g11",
+    "path": "data/experiment_instances/artificial/n300_m600_p0.05_g11.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n300_m600_p0.05_g22",
+    "path": "data/experiment_instances/artificial/n300_m600_p0.05_g22.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n300_m600_p0.05_g33",
+    "path": "data/experiment_instances/artificial/n300_m600_p0.05_g33.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n300_m600_p0.15_g11",
+    "path": "data/experiment_instances/artificial/n300_m600_p0.15_g11.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n300_m600_p0.15_g22",
+    "path": "data/experiment_instances/artificial/n300_m600_p0.15_g22.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n300_m600_p0.15_g33",
+    "path": "data/experiment_instances/artificial/n300_m600_p0.15_g33.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n300_m600_p0.5_g11",
+    "path": "data/experiment_instances/artificial/n300_m600_p0.5_g11.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n300_m600_p0.5_g22",
+    "path": "data/experiment_instances/artificial/n300_m600_p0.5_g22.json"
+  },
+  {
+    "experiment": "artificial",
+    "name": "n300_m600_p0.5_g33",
+    "path": "data/experiment_instances/artificial/n300_m600_p0.5_g33.json"
+  }
+]

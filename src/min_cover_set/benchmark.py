@@ -121,6 +121,17 @@ def summarize(records):
         for metric in ("optimality_gap_pct", "gap_to_best_known_pct"):
             values = [item[metric] for item in group if item[metric] is not None]
             result[metric + "_mean"] = statistics.mean(values) if values else None
+        accuracy_values = [item["accuracy"] for item in group
+                           if item["accuracy"] is not None]
+        result["accuracy_mean"] = (
+            statistics.mean(accuracy_values) if accuracy_values else None
+        )
+        quality_values = [item["quality_vs_reference"]
+                          for item in group
+                          if item["quality_vs_reference"] is not None]
+        result["quality_vs_reference_mean"] = (
+            statistics.mean(quality_values) if quality_values else None
+        )
         summaries.append(result)
     return summaries
 
@@ -158,9 +169,11 @@ def run_experiments(manifest, output, *, seeds=tuple(range(20)), restarts=30,
                     rcl_size=3, repeats=3, exact=False, overwrite=False):
     """Run a manifest serially, validate every cover, then publish four result files.
 
-    Unknown references remain blank in CSV. A best-known value is an upper bound,
-    not an optimum: its gap may legitimately be negative. --exact derives a proven
-    reference via the team's exhaustive solver and also times all three exact methods.
+    Unknown references remain blank in CSV. Accuracy is ``optimal / selected``
+    only when the reference is proven optimal; best-known values are upper
+    bounds, not optima, so their accuracy remains blank. --exact derives a
+    proven reference via the team's exhaustive solver and also times all four
+    exact methods.
     """
     manifest, output = Path(manifest), Path(output)
     seeds = tuple(seeds)
@@ -196,10 +209,11 @@ def run_experiments(manifest, output, *, seeds=tuple(range(20)), restarts=30,
                 raise ValueError("provided optimal reference disagrees with exhaustive search")
             reference = {"kind": "optimal", "value": len(oracle),
                          "source": "exhaustive search: min_cover_set.brute_force"}
-        algorithms = {"greedy": solver.greedy, "greedy_pruned": solver.greedy_pruned}
+        algorithms = {"greedy": solver.greedy}
         if exact:
             algorithms.update({"brute_force": solver.brute_force,
                                "branch_and_bound": solver.branch_and_bound,
+                               "binary_branch_and_bound": solver.binary_branch_and_bound,
                                "dynamic_programming": solver.dynamic_programming})
         # One warm-up per method; never counted as a measured run.
         for method in algorithms.values():
@@ -224,7 +238,12 @@ def run_experiments(manifest, output, *, seeds=tuple(range(20)), restarts=30,
             validate_cover(instance, selected)
             if reference["kind"] == "optimal" and len(selected) < reference["value"]:
                 raise ValueError("solution contradicts the stated optimal reference")
-            if exact and name in ("brute_force", "branch_and_bound", "dynamic_programming"):
+            if exact and name in (
+                "brute_force",
+                "branch_and_bound",
+                "binary_branch_and_bound",
+                "dynamic_programming",
+            ):
                 if len(selected) != reference["value"]:
                     raise ValueError("exact algorithms disagree")
             gap = _gap(len(selected), reference)
@@ -234,6 +253,14 @@ def run_experiments(manifest, output, *, seeds=tuple(range(20)), restarts=30,
                       "cardinality": len(selected), "time_ms": elapsed, "valid": True,
                       "reference_kind": reference["kind"], "reference_value": reference["value"],
                       "reference_source": reference["source"],
+                      "accuracy": (
+                          reference["value"] / len(selected)
+                          if reference["kind"] == "optimal" and selected else None
+                      ),
+                      "quality_vs_reference": (
+                          reference["value"] / len(selected)
+                          if reference["value"] is not None and selected else None
+                      ),
                       "optimality_gap_pct": gap if reference["kind"] == "optimal" else None,
                       "gap_to_best_known_pct": gap if reference["kind"] == "best_known" else None}
             records.append(record)

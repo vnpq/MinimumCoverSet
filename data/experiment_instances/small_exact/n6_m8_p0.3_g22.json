@@ -1,0 +1,51 @@
+{
+  "universe": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "subsets": {
+    "S1": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "S2": [
+      1,
+      4
+    ],
+    "S3": [
+      0,
+      2,
+      4
+    ],
+    "S4": [
+      2,
+      3
+    ],
+    "S5": [
+      5
+    ],
+    "S6": [
+      2
+    ],
+    "S7": [
+      2
+    ],
+    "S8": []
+  },
+  "metadata": {
+    "experiment": "small_exact",
+    "name": "n6_m8_p0.3_g22",
+    "family": "small_exact",
+    "num_elements": 6,
+    "num_subsets": 8,
+    "density": 0.3,
+    "seed": 22
+  }
+}
