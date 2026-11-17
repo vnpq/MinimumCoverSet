@@ -1,10 +1,13 @@
 """Object-oriented facade for minimum set cover algorithms."""
 
 from .model import SetCoverInstance, SubsetName
+from .binary_branch_and_bound import binary_branch_and_bound_cover
 from .branch_and_bound import branch_and_bound_cover
 from .brute_force import brute_force_cover
 from .dynamic_programming import dynamic_programming_cover
 from .greedy import greedy_cover
+from .heuristic import greedy_pruned_cover, randomized_greedy_cover
+
 
 class MinimumCoverSet:
     """Run different minimum set cover algorithms on one instance."""
@@ -15,6 +18,16 @@ class MinimumCoverSet:
     def greedy(self) -> tuple[SubsetName, ...]:
         return greedy_cover(self.instance)
 
+    def greedy_pruned(self) -> tuple[SubsetName, ...]:
+        return greedy_pruned_cover(self.instance)
+
+    def randomized_greedy(
+        self, *, seed: int = 0, restarts: int = 30, rcl_size: int = 3
+    ) -> tuple[SubsetName, ...]:
+        return randomized_greedy_cover(
+            self.instance, seed=seed, restarts=restarts, rcl_size=rcl_size
+        )
+
     def brute_force(self) -> tuple[SubsetName, ...]:
         return brute_force_cover(self.instance)
 
@@ -23,6 +36,9 @@ class MinimumCoverSet:
 
     def branch_and_bound(self) -> tuple[SubsetName, ...]:
         return branch_and_bound_cover(self.instance)
+
+    def binary_branch_and_bound(self) -> tuple[SubsetName, ...]:
+        return binary_branch_and_bound_cover(self.instance)
 
 
 MinimunCoverSet = MinimumCoverSet

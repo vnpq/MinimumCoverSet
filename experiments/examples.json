@@ -1,0 +1,9 @@
+{
+  "description": "Small examples; use --exact to derive and cross-check optima.",
+  "instances": [
+    {"name": "basic", "family": "illustrative", "path": "../examples/basic.json"},
+    {"name": "greedy_trap", "family": "illustrative", "path": "../examples/greedy_trap.json"},
+    {"name": "randomized_improvement", "family": "illustrative", "path": "../examples/randomized_improvement.json"},
+    {"name": "wireless_towers", "family": "illustrative", "path": "../examples/wireless_towers.json"}
+  ]
+}

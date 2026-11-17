@@ -1,0 +1,11 @@
+{
+  "universe": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+  "subsets": {
+    "Tower 1": ["A", "B", "C", "D"],
+    "Tower 2": ["C", "D", "E", "F"],
+    "Tower 3": ["E", "F", "G"],
+    "Tower 4": ["G", "H", "I"],
+    "Tower 5": ["A", "H", "J"],
+    "Tower 6": ["B", "D", "I", "J"]
+  }
+}
