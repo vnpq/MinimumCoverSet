@@ -1,0 +1,14 @@
+{
+  "description": "Small wireless-tower geographic instances; use --exact to derive proven optima.",
+  "instances": [
+    {"name":"app_n10_m6_r1_g11","family":"real_world_application","generate":{"_generator":"geographic","grid_width":5,"grid_height":2,"num_tower_candidates":6,"coverage_radius":1.0,"seed":11}},
+    {"name":"app_n10_m6_r1_g22","family":"real_world_application","generate":{"_generator":"geographic","grid_width":5,"grid_height":2,"num_tower_candidates":6,"coverage_radius":1.0,"seed":22}},
+    {"name":"app_n10_m6_r1_g33","family":"real_world_application","generate":{"_generator":"geographic","grid_width":5,"grid_height":2,"num_tower_candidates":6,"coverage_radius":1.0,"seed":33}},
+    {"name":"app_n10_m6_r2_g11","family":"real_world_application","generate":{"_generator":"geographic","grid_width":5,"grid_height":2,"num_tower_candidates":6,"coverage_radius":2.0,"seed":11}},
+    {"name":"app_n10_m6_r2_g22","family":"real_world_application","generate":{"_generator":"geographic","grid_width":5,"grid_height":2,"num_tower_candidates":6,"coverage_radius":2.0,"seed":22}},
+    {"name":"app_n10_m6_r2_g33","family":"real_world_application","generate":{"_generator":"geographic","grid_width":5,"grid_height":2,"num_tower_candidates":6,"coverage_radius":2.0,"seed":33}},
+    {"name":"app_n10_m6_r3_g11","family":"real_world_application","generate":{"_generator":"geographic","grid_width":5,"grid_height":2,"num_tower_candidates":6,"coverage_radius":3.0,"seed":11}},
+    {"name":"app_n10_m6_r3_g22","family":"real_world_application","generate":{"_generator":"geographic","grid_width":5,"grid_height":2,"num_tower_candidates":6,"coverage_radius":3.0,"seed":22}},
+    {"name":"app_n10_m6_r3_g33","family":"real_world_application","generate":{"_generator":"geographic","grid_width":5,"grid_height":2,"num_tower_candidates":6,"coverage_radius":3.0,"seed":33}}
+  ]
+}

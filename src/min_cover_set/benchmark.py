@@ -16,7 +16,7 @@ import sys
 import tempfile
 import time
 
-from data_generator import generate_instance
+from data_generator import generate_geographic_instance, generate_instance
 from .io import load_instance
 from .min_cover_set import MinimumCoverSet
 from .model import SetCoverInstance
@@ -66,7 +66,14 @@ def _load_manifest(path: Path, exact: bool):
             generation = specification["generate"]
             if not isinstance(generation, dict) or type(generation.get("seed")) is not int:
                 raise ValueError("generated instances require an explicit integer seed")
-            instance = generate_instance(**generation)
+            generation = dict(generation)
+            generator = generation.pop("_generator", "random")
+            if generator == "geographic":
+                instance = generate_geographic_instance(**generation)
+            elif generator == "random":
+                instance = generate_instance(**generation)
+            else:
+                raise ValueError("unsupported instance generator")
         else:
             instance = load_instance(path.parent / specification["path"],
                                      format=specification.get("format", "auto"))
@@ -90,6 +97,9 @@ def _gap(cardinality, reference):
     if value == 0:
         return 0.0
     return 100 * (cardinality - value) / value
+
+
+
 
 
 def summarize(records):
@@ -300,7 +310,8 @@ def main():
     try:
         metadata = run_experiments(args.manifest, args.output, seeds=args.seeds,
                                    restarts=args.restarts, rcl_size=args.rcl_size,
-                                   repeats=args.repeats, exact=args.exact, overwrite=args.overwrite)
+                                   repeats=args.repeats, exact=args.exact,
+                                   overwrite=args.overwrite)
     except (ValueError, TypeError, OSError) as exc:
         parser.error(str(exc))
     print(json.dumps({"instances": metadata["instances"], "runs": metadata["measured_runs"],
